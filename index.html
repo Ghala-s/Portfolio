@@ -141,11 +141,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            font-weight: bold;
-            color: var(--neon-cyan);
-            font-family: 'Orbitron', sans-serif;
+            overflow: hidden;            
         }
+    
+    .avatar-img {                     
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
         
         @keyframes rotate {
             from { transform: rotate(0deg); }
@@ -648,11 +652,13 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="avatar">
-                <div class="avatar-circle">
-                    <div class="avatar-inner">GB</div>
-                </div>
-            </div>
+    <div class="avatar">
+    <div class="avatar-circle">
+        <div class="avatar-inner">
+            <img src="img/myPic.jpg" alt="Ghala Basaad" class="avatar-img">
+        </div>
+    </div>
+    </div>
             <h1 class="glitch" data-text="GHALA BASAAD">GHALA BASAAD</h1>
             <p class="title">Software Developer</p>
             <p class="tagline">Building efficient code, solving problems, and always learning.</p>
@@ -674,7 +680,7 @@
                 <p>Beyond the classroom, I thrive in collaborative environments and leadership roles. I'm actively involved in student clubs and extracurricular activities where I can combine my technical skills with my passion for public speaking and community building.</p>
                 
                 <div class="fun-fact">
-                    <strong>✦ Fun Fact:</strong> When I'm not coding, you'll find me exploring culture, delivering speeches, or contributing to student organizations. I believe the best solutions come from diverse perspectives and meaningful connections.
+                    <strong>✦ Fun Fact:</strong> I’m convinced brownies can fix almost anything, so I bake them a lot.
                 </div>
             </div>
         </div>
@@ -701,19 +707,20 @@
                 <div class="skill-card">
                     <h3>Tools & Technologies</h3>
                     <ul>
-                        <li>PuTTY</li>
-                        <li>Linux Shell</li>
+                        <li>Figma</li>
                         <li>Git</li>
-                        <li>Flask</li>
+                        <li>Jira</li>
+                        <li>VSCode</li>
                         <li>GitLab</li>
-                        <li>JUnit 5</li>
+                        <li>Excel</li>
+                        <li>Microsoft Office</li>
+                        
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Soft Skills</h3>
                     <ul>
                         <li>Leadership</li>
-                        <li>Public Speaking</li>
                         <li>Teamwork</li>
                         <li>Problem Solving</li>
                         <li>Agile/Scrum</li>
@@ -766,24 +773,24 @@
                     <p>Testing and ensuring software quality through rigorous QA processes and automated testing frameworks</p>
                 </div>
                 <div class="experience-item">
-                    <h3>Peer Learning Leader</h3>
-                    <p>Providing one-on-one and group tutoring sessions, helping students master complex concepts and improve academic performance</p>
-                </div>
-                <div class="experience-item">
-                    <h3>Communications Executive, Paper Art Club</h3>
-                    <p>Leading communication strategies and community engagement</p>
-                </div>
-                <div class="experience-item">
-                    <h3>Mentor, MSA Mentorship Program</h3>
-                    <p>Guiding and supporting students in their academic journey</p>
-                </div>
-                <div class="experience-item">
                     <h3>Backend Developer, Women in Tech Society</h3>
                     <p>Developing technical solutions to empower women in technology</p>
                 </div>
                 <div class="experience-item">
                     <h3>Research Assistant, Western University</h3>
                     <p>Contributing to innovative research projects</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Peer Learning Leader</h3>
+                    <p>Providing one-on-one and group tutoring sessions, helping students master complex concepts and improve academic performance</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Communications Executive, Paper Art Club</h3>
+                    <p>Leading communication strategies and community engagement</p>
+                </div> 
+                <div class="experience-item">
+                    <h3>Mentor, MSA Mentorship Program</h3>
+                    <p>Guiding and supporting students in their academic journey</p>
                 </div>
             </div>
         </div>
