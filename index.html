@@ -356,10 +356,15 @@
             background: linear-gradient(135deg, rgba(0, 255, 249, 0.1), rgba(179, 0, 255, 0.1));
         }
         
-        .project-placeholder {
+        .project-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
         }
         
         .project-card h3,
@@ -726,7 +731,7 @@
             <div class="projects-grid">
                 <a href="https://github.com/Ghala-s/Khushu" target="_blank" class="project-card project-link">
                     <div class="project-image-container">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8fPjwfwAIAgMBdKh4DQAAAABJRU5ErkJggg==" alt="Khusu Project" class="project-placeholder">
+                        <img src="img/khusu.png" alt="Khusu Project" class="project-image">
                     </div>
                     <h3>Khusu</h3>
                     <p class="project-year">MSAhacks – 2nd Place 🏆</p>
@@ -734,18 +739,18 @@
                 
                 <a href="https://github.com/Ghala-s/Paw-Print" target="_blank" class="project-card project-link">
                     <div class="project-image-container">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8fPjwfwAIAgMBdKh4DQAAAABJRU5ErkJggg==" alt="Paw & Print Project" class="project-placeholder">
+                        <img src="img/paw.png" alt="Paw & Print Project" class="project-image">
                     </div>
                     <h3>Paw & Print</h3>
-
+                    <p class="project-year"></p>
                 </a>
                 
                 <a href="https://github.com/Ghala-s/Luna" target="_blank" class="project-card project-link">
                     <div class="project-image-container">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8fPjwfwAIAgMBdKh4DQAAAABJRU5ErkJggg==" alt="Luna Project" class="project-placeholder">
+                        <img src="img/luna.png" alt="Luna Project" class="project-image">
                     </div>
                     <h3>Luna</h3>
-                
+                    <p class="project-year"></p>
                 </a>
             </div>
         </div>
@@ -849,7 +854,7 @@
     
     <!-- Footer -->
     <footer>
-        <p>© 2025 Ghala Basaad | Crafted with code & creativity</p>
+        <p>© 2025 Ghala Basaad</p>
     </footer>
     
     <script>
@@ -869,26 +874,6 @@
             e.preventDefault();
             alert('Thank you for your message! I\'ll get back to you soon.');
             this.reset();
-        });
-        
-        // Load actual project images
-        const projectImages = document.querySelectorAll('.project-placeholder');
-        const imageUrls = [
-            'https://raw.githubusercontent.com/Ghala-s/Khushu/main/screenshot.png',
-            'https://raw.githubusercontent.com/Ghala-s/Paw-Print/main/screenshot.png',
-            'https://raw.githubusercontent.com/Ghala-s/Luna/main/screenshot.png'
-        ];
-        
-        projectImages.forEach((img, index) => {
-            const tempImg = new Image();
-            tempImg.onload = function() {
-                img.src = imageUrls[index];
-            };
-            tempImg.onerror = function() {
-                // Keep placeholder if image fails to load
-                img.style.background = 'linear-gradient(135deg, rgba(0, 255, 249, 0.2), rgba(179, 0, 255, 0.2))';
-            };
-            tempImg.src = imageUrls[index];
         });
         
         // Add parallax effect to floating elements
