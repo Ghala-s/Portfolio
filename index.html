@@ -334,11 +334,45 @@
         .project-card {
             background: rgba(10, 14, 39, 0.9);
             border: 2px solid var(--neon-purple);
-            padding: 2rem;
+            padding: 0;
             border-radius: 10px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .project-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 255, 249, 0.1), rgba(179, 0, 255, 0.1));
+        }
+        
+        .project-placeholder {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-card h3,
+        .project-card .project-year {
+            padding: 0 2rem;
+        }
+        
+        .project-card h3 {
+            padding-top: 1.5rem;
+        }
+        
+        .project-card .project-year {
+            padding-bottom: 1.5rem;
         }
         
         .project-card::before {
@@ -690,35 +724,29 @@
         <div class="container">
             <h2 class="section-title glitch" data-text="PROJECTS">PROJECTS</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <a href="https://github.com/Ghala-s/Khushu" target="_blank" class="project-card project-link">
+                    <div class="project-image-container">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8fPjwfwAIAgMBdKh4DQAAAABJRU5ErkJggg==" alt="Khusu Project" class="project-placeholder">
+                    </div>
                     <h3>Khusu</h3>
-                    <p class="project-year">2025 | MSAhacks – 2nd Place 🏆</p>
-                    <ul>
-                        <li>Co-developed a real-time backend using Flask to analyze EEG brainwave data and compute a custom Khushu Index for measuring prayer focus</li>
-                        <li>Integrated GPT-4 with Muse headband data to deliver personalized support, especially for users with ADHD, autism, and sensory sensitivities</li>
-                        <li>Combined neurotechnology with AI to create an innovative wellness solution</li>
-                    </ul>
-                </div>
+                    <p class="project-year">MSAhacks – 2nd Place 🏆</p>
+                </a>
                 
-                <div class="project-card">
+                <a href="https://github.com/Ghala-s/Paw-Print" target="_blank" class="project-card project-link">
+                    <div class="project-image-container">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8fPjwfwAIAgMBdKh4DQAAAABJRU5ErkJggg==" alt="Paw & Print Project" class="project-placeholder">
+                    </div>
                     <h3>Paw & Print</h3>
-                    <p class="project-year">2025 | Group Project</p>
-                    <ul>
-                        <li>Built an interactive pet care game in Java Swing simulating tasks like feeding, sleeping, and health monitoring</li>
-                        <li>Developed a responsive GUI and implemented unit tests using JUnit 5 for functionality verification</li>
-                        <li>Worked in an Agile team using Scrum methodology and GitLab for version control</li>
-                    </ul>
-                </div>
+
+                </a>
                 
-                <div class="project-card">
+                <a href="https://github.com/Ghala-s/Luna" target="_blank" class="project-card project-link">
+                    <div class="project-image-container">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mM8fPjwfwAIAgMBdKh4DQAAAABJRU5ErkJggg==" alt="Luna Project" class="project-placeholder">
+                    </div>
                     <h3>Luna</h3>
-                    <p class="project-year">2025 | Group Project</p>
-                    <ul>
-                        <li>An AI-powered women's health app that connects menstrual cycle tracking with mental wellness insights</li>
-                        <li>Implemented the sign-in system, chatbot logic, and API endpoints</li>
-                        <li>Focused on creating an empowering health-tech solution for women</li>
-                    </ul>
-                </div>
+                
+                </a>
             </div>
         </div>
     </section>
@@ -728,6 +756,14 @@
         <div class="container">
             <h2 class="section-title glitch" data-text="EXPERIENCE">EXPERIENCE</h2>
             <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Software Quality Software Engineer Intern</h3>
+                    <p>Testing and ensuring software quality through rigorous QA processes and automated testing frameworks</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Peer Learning Leader</h3>
+                    <p>Providing one-on-one and group tutoring sessions, helping students master complex concepts and improve academic performance</p>
+                </div>
                 <div class="experience-item">
                     <h3>Communications Executive, Paper Art Club</h3>
                     <p>Leading communication strategies and community engagement</p>
@@ -813,7 +849,7 @@
     
     <!-- Footer -->
     <footer>
-        <p>© 2025 Ghala Basaad</p>
+        <p>© 2025 Ghala Basaad | Crafted with code & creativity</p>
     </footer>
     
     <script>
@@ -833,6 +869,26 @@
             e.preventDefault();
             alert('Thank you for your message! I\'ll get back to you soon.');
             this.reset();
+        });
+        
+        // Load actual project images
+        const projectImages = document.querySelectorAll('.project-placeholder');
+        const imageUrls = [
+            'https://raw.githubusercontent.com/Ghala-s/Khushu/main/screenshot.png',
+            'https://raw.githubusercontent.com/Ghala-s/Paw-Print/main/screenshot.png',
+            'https://raw.githubusercontent.com/Ghala-s/Luna/main/screenshot.png'
+        ];
+        
+        projectImages.forEach((img, index) => {
+            const tempImg = new Image();
+            tempImg.onload = function() {
+                img.src = imageUrls[index];
+            };
+            tempImg.onerror = function() {
+                // Keep placeholder if image fails to load
+                img.style.background = 'linear-gradient(135deg, rgba(0, 255, 249, 0.2), rgba(179, 0, 255, 0.2))';
+            };
+            tempImg.src = imageUrls[index];
         });
         
         // Add parallax effect to floating elements
